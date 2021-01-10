@@ -12,7 +12,7 @@ BigInteger bi2 = BigInteger.probablePrime(10,new Random());
 ```
 
 #### 2. 호출될 때마다 인스턴스를 새로 생성하지는 않아도 된다.
-같은 객체의 생성이 자주 요구되는 경우 동일한 객체(같은 메모리의 주소값을 갖는 객체)를 반환하여 메모리를 효과적으로 사용할 수 있.
+같은 객체의 생성이 자주 요구되는 경우 동일한 객체(같은 메모리의 주소값을 갖는 객체)를 반환하여 메모리를 효과적으로 사용할 수 있다.
 
 ```java
 //Boolean 클래스 일부
@@ -38,7 +38,7 @@ Boolean 클래스의 정적 팩터리 메서드인 Boolean.valueOf 를 살펴보
     - 제공자 등록 API : 제공자가 구현체를 등록할 때 사용
     - 서비스 접근 API : 클라이언트가 서비스의 인스턴스를 얻을 때 사용
 
-이는 각각 JDBC의 Connection, DriverManager.registerDriver, DriverManager.getConnection에 해당되
+이는 각각 JDBC의 Connection, DriverManager.registerDriver, DriverManager.getConnection에 해당되고<br>
 새로운 DBMS가 생겨나도 제공자 등록 API를 통해 등록하여 동일한 인터페이스로 사용이 가능하다.
 
 ## 정적 팩터리 메서드의 단점

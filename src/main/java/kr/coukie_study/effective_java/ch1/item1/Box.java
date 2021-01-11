@@ -1,4 +1,4 @@
-package kr.coukie_study.effective_java.ch1;
+package kr.coukie_study.effective_java.ch1.item1;
 
 public class Box {
   private static final Box EMPTY_BOX = new EmptyBox();

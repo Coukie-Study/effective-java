@@ -1,7 +1,7 @@
-package kr.coukie_study.effective_java.ch1;
+package kr.coukie_study.effective_java.ch1.item1;
 
 public class ParameterFactoryTest {
-  public static void main(String[] args) throws Exception{
+  public static void main(String[] args) throws Exception {
     Pet cat = Pet.getCatOrDog("cat");
     Pet dog = Pet.getCatOrDog("dog");
     cat.sound();
@@ -10,10 +10,9 @@ public class ParameterFactoryTest {
 }
 
 class Pet {
-  public void sound() {
-  }
+  public void sound() {}
 
-  public static Pet getCatOrDog (String pet) throws Exception{
+  public static Pet getCatOrDog(String pet) throws Exception {
     if (pet.equals("cat")) {
       return new Cat();
     } else if (pet.equals("dog")) {
@@ -21,7 +20,6 @@ class Pet {
     }
     throw new Exception("잘못된 입력");
   }
-
 }
 
 class Cat extends Pet {

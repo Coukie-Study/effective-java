@@ -1,6 +1,7 @@
 # 아이템 3. private 생성자나 열거 타입으로 싱글턴임을 보증하라.
 ## 싱글턴(Singleton)이란 ?
-인스턴스를 오직 하나만 생성할 수 있는 클래
+인스턴스를 오직 하나만 생성할 수 있는 클래스.<br>
+예시로 함수와 같은 무상태 객체나 설계상 유일해야 하는 시스템 컴포넌트를 들 수 있다.
 ## 클래스를 싱글턴으로 만드는 방법
 ### 1. public static final 필드 방식
 ```java
@@ -35,21 +36,26 @@ public class Elvis{
     
     위의 장점을 사용하지 않을 거면 public field 방식이 더 좋다.
     
-#### 위 두가지 방법의 단점
+### 위 두가지 방법의 단점
 - 리플렉션 API를 사용해 private 생성자를 호출할 수 있다.
 
-    리플렉션 API인 AccesibleObject.setAccessible을 사용하면 private 생성자를 호출할 수 있다.<br>
-    예방하려면 생성자에 두 번재 객체가생성되려 할 때 예외를 던져야 한다.
+    *리플렉션 API인 AccesibleObject.setAccessible을 사용하면 private 생성자를 호출할 수 있다.<br>
+    예방하려면 생성자에 두 번재 객체가생성되려 할 때 예외를 던져야 한다.<br>
+    
+    리플렉션 API : 구체적인 클래스 타입을 몰라도 클래스의 메소드, 타입, 변수들에 접근할 수 있게 해주는 API
 - 단순히 직렬화가 불가능 하다.
 
-    단순히 Serializable을 구현한다고 선언하는 것만으로는 부족하다. 모든 인스턴스 필드를 일시적(transient)로 선언하고<br>
-    readResolve 메서드를 제공해야 한다.
+    단순히 Serializable을 구현한다고 선언하는 것만으로는 부족하다. 모든 인스턴스 필드를 *일시적(transient)로 선언하고<br>
+    *readResolve 메서드를 제공해야 한다.
     ```java
     private Object readResolve(){
       // '진짜' Elvis를 반환하고, 가짜 Elvis는 가비지 컬렉터에 맡긴다.
       return INSTANCE;
     }
     ```
+  
+    transient : 직렬화 과정에서 제외하고 싶은 변수에 붙히는 키워드<br>
+    readResolve : 역직렬화 과정에서 반환하는 인스턴스를 설정 할 수 있는 메서드
 ### 3. 열거 타입 방식의 싱글턴 - 바람직한 방법
 ```java
 public enum Elvis{

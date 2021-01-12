@@ -22,8 +22,8 @@ public class SpellChecker{
     private SpellChecker(...) {} //객체 생성 방지
     public static SpellChecker Instance = new SpellChecker(...);
 
-    public static boolean isValid(String word) {...}
-    public static List<String> suggestions(String typo) {...}
+    public boolean isValid(String word) {...}
+    public List<String> suggestions(String typo) {...}
 }
 ```
 #### 단점

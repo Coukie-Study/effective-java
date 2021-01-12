@@ -33,7 +33,7 @@ public class SpellChecker{
 위 두가지 방식에 있어 어색하고 오류를 내기 쉬우며 멀티 스레드 환경에서는 쓸 수 없다.
 
 
-####의존 객체 주입을 사용하자
+#### 의존 객체 주입을 사용하자
 ```java 
 public class SpellChecker{
     private static final Lexicon dictionary = ...;

@@ -36,7 +36,7 @@ public class SpellChecker{
 #### 의존 객체 주입을 사용하자
 ```java 
 public class SpellChecker{
-    private final Lexicon dictionary = ...;
+    private final Lexicon dictionary;
 
     public SpellChecker(Lexicon dictionary){
         this.dictionary = Objects.requireNonNull(dictionary);

@@ -1,4 +1,4 @@
-#try-finally보다는 try-with-resources를 사용하라
+# try-finally보다는 try-with-resources를 사용하라
 
 ## try-finally
 자바 라이브러리 중에는 close 호출을 통해 직접 닫아줘야하는 자원이 있다.

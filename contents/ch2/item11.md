@@ -81,6 +81,7 @@ PhoneNumber 클래스는 hashCode를 재정의하지 않았기 때문에 논리�
   int result = Short.hashCode(areaCode);
   result = 31 * result + Short.hashCode(prefix);
   result = 31 * result + Short.hashCode(lineNum);
+  return result
 }
 ```
 

@@ -142,7 +142,7 @@ public class Point{
     this.y = y;
   }
   @Override public boolean equals(Object o){
-    if(!(o instance of Point))
+    if(!(o instanceof Point))
       	return false;
     Point p = (Point)o;
     return p.x == x && p.y ==y;
@@ -169,7 +169,7 @@ public class ColorPoint extends Point{
 ```java
 //잘못된 코드 - 대칭성 위배
 @Override public boolean equals(Object o){
-  if(!(o instance of ColorPoint))
+  if(!(o instanceof ColorPoint))
     return false;
   return super.equals(o) && ((ColorPoint) o).color == color;
 }
@@ -189,7 +189,7 @@ ColorPoint.equals가 Point와 비교할 때는 색상을 무시하도록 하면 
 ```java
 //잘못된 코드 - 추이성 위배
 @Override public boolean equals(Object o){
-  if(!(o instance of Point))
+  if(!(o instanceof Point))
     return false;
   
   //o가 일반 Point면 색상을 무시하고 비교한다.
@@ -216,7 +216,7 @@ p1.equals(p3);	//false
 
 구체 클래스를 확장해 새로운 값을 추가하면서 equals 규약을 만족시킬 방법은 존재하지 않는다.
 
-이 말은 얼핏, equals 안의 instanced 검사를 getClass 검사로 바꾸면 규약도 지키고 값도 추가하면서 구체 클래스를 상속할 수 있다는 뜻으로 들린다.
+이 말은 얼핏, equals 안의 instance 검사를 getClass 검사로 바꾸면 규약도 지키고 값도 추가하면서 구체 클래스를 상속할 수 있다는 뜻으로 들린다.
 
 ```java
 //잘못된 코드 - 리스코프 치환원칙 위배

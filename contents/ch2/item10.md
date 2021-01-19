@@ -177,7 +177,7 @@ public class ColorPoint extends Point{
 
 ```java
 Point p = new Point(1,2);
-ColorPoint p = new ColorPoint(1, 2, Color.RED);
+ColorPoint cp = new ColorPoint(1, 2, Color.RED);
 p.equals(cp);	//true - equals의 색상을 무시
 cp.equals(p); //false - 입력 매개변수의 클래스 종류가 다름
 ```

@@ -6,19 +6,20 @@ public class ParameterFactoryTest {
     Pet dog = Pet.getCatOrDog("dog");
     cat.sound();
     dog.sound();
+
   }
 }
 
 class Pet {
   public void sound() {}
 
-  public static Pet getCatOrDog(String pet) throws Exception {
-    if (pet.equals("cat")) {
+  public static Pet getCatOrDog(String pet) {
+    if ("cat".equals(pet)) {
       return new Cat();
-    } else if (pet.equals("dog")) {
+    } else if ("dog".equals(pet)) {
       return new Dog();
     }
-    throw new Exception("잘못된 입력");
+    throw new IllegalArgumentException("잘못된 입력");
   }
 }
 
@@ -35,3 +36,4 @@ class Dog extends Pet {
     System.out.println("멍멍");
   }
 }
+

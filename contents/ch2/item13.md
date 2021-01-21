@@ -9,7 +9,7 @@ protected native Object clone() throws CloneNotSupportedException;
 보통 인터페이스를 구현한다는것은 인터페이스에서 정의한 기능을 제공한다는 의미이다.<br>
 하지만 Cloneable 인터페이스는 아무런 메서드가 존재하지 않는 인터페이스다.<br>
 그럼에도 clone 메서드를 사용하기위해 Cloneable을 구현해야 하는 이유는 Cloneable을 구현하지<br>
-않은채 clone 메서드를 사용하면 CloneNOtSupportedException이 발생하기 때문이다.<br>  
+않은채 clone 메서드를 사용하면 CloneNotSupportedException이 발생하기 때문이다.<br>  
 이는 Cloneable 인터페이스가 일반적인 인터페이스의 쓰임과는 달리 상위 클래스(Object)에 정의된<br>
 protected 메서드(clone 메서드)의 동작 방식을 변경하기 위함으로 쓰였기 때문이다.
 

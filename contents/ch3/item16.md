@@ -2,8 +2,6 @@
 
 ## public 접근 제어자
 
----
-
 ```java
 public class HelloWorld {
     public String hello;
@@ -15,8 +13,6 @@ public class HelloWorld {
     - 불변식을 보장할 수 없으며, 외부에서 필드에 접근할 때 부수 작업을 수행할 수도 없다.
 
 ## private 접근 제어자
-
----
 
 ```java
 public class HelloWorld {

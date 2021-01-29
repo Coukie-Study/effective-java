@@ -143,12 +143,6 @@ public class Wizard implements Character{
   }
 }
 
-public static void main(String[] args) {
-  Thief thief = new Thief();
-  Wizard wizard = new Wizard();
-  thief.process();
-  wizard.process();
-}
 ```
 
 위 소스에서 보는 바와 같이 attack() 메소드를 제외하고는 모두 중복되는것을 볼 수 있다. 이런 중복된 부분을 추상 골격 구현 클래스를 이용하여 정의하는 것이다.

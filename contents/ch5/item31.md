@@ -64,7 +64,7 @@ Collection<Object> objects = ...;
 numberStack.popAll(objects);
 ```
 
-Collection<Object>가 Collection<Number>의 하위 타입이 아니기 때문에 문제가 발생한다.
+Collection< Object >가 Collection< Number >의 하위 타입이 아니기 때문에 문제가 발생한다.
 
 'E의 Collection'이 아니라 'E의 상위 타입의 Collection'이어야 한다.
 

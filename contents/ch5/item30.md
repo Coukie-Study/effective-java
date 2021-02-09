@@ -66,7 +66,7 @@ private static UnaryOperator<Object> IDENTITY_FN = (t)->t;
 
 IDENTITY_FN을 UnaryOperator<T>로 형변환하면 경고가 발생한다.
 
-T가 어떤 타입이든 UnaryOperator<Object>는 UnaryOperator<T>가 아니기 때문이다.
+T가 어떤 타입이든 UnaryOperator< Object >는 UnaryOperator< T >가 아니기 때문이다.
 
 하지만 항등함수란 입력 값을 수정 없이 그대로 반환하는 특별한 함수이므로 T가 어떤 타입이든 UnaryOperator<T>를 사용해도 타입 안전하다.
 
@@ -84,7 +84,7 @@ public interface Comparable<T>{
 }
 ```
 
-여기서 타입 매개변수 T는 Comparable<T>를 구현한 타입이 비교할 수 있는 원소의 타입을 정의한다.
+여기서 타입 매개변수 T는 Comparable< T >를 구현한 타입이 비교할 수 있는 원소의 타입을 정의한다.
 
 실제로 거의 모든 타입은 자신과 같은 타입의 원소와만 비교할 수 있다.
 

@@ -102,7 +102,7 @@ public static <E extends Comparable<E>> E max(Collection<E> c) {
                 result = Objects.requireNonNull(e);
 
         return result;
-    }
+   }
 ```
 
 

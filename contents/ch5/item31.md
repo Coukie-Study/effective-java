@@ -108,7 +108,7 @@ public static <E extends Comparable<? super E>> E max(List<? extends E> list)
 
 입력 매개변수에서는 E 인스턴스를 생산하므로 원래의 List<E>를 List<? Extends E>로 수정했다.
 
-원래 선언에서는 E가 Comparable<E>를 확장한다고 정의했는데, 이때 Comparable<E>는 E 인스턴스를 소비한다.(그리고 선후관계를 뜻하는 정수를 생산한다.)
+원래 선언에서는 E가 Comparable< E >를 확장한다고 정의했는데, 이때 Comparable< E >는 E 인스턴스를 소비한다.(그리고 선후관계를 뜻하는 정수를 생산한다.)
 
 Comparable은 언제나 소비자 이므로, 일반적으로 Comparable<E> 보다는 Comparable<? super E>를 사용하는편이 낫다.
 
@@ -135,7 +135,7 @@ public static void swap(List<?> list, int i, int j) {
 
 하지만 이 swap 선언에는 문제가 하나 있는데 구현한 코드가 컴파일되지 않는다는 것이다.
 
-List<?>에는 null 외에는 어떤 값도 넣을 수 없다는 데 있다.
+List< ? >에는 null 외에는 어떤 값도 넣을 수 없다는 데 있다.
 
 이를 해결하기 위해서는 와일드카드 타입의 실제 타입을 알려주는 메서드를 private 도우미 메서드로 따로 작성하여 활용하는 방법이다
 
@@ -150,7 +150,7 @@ private static <E> void swapHelper(List<E> list, int i, int j) {
 }
 ```
 
-swapHelper 메서드는 리스트가 List<E>임을 알고 있다. 즉 이 리스트에서 꺼낸 값의 타입은 항상 E이고, E 타입의 값이라면 이 리스트에 넣어도 안전하다.
+swapHelper 메서드는 리스트가 List< E >임을 알고 있다. 즉 이 리스트에서 꺼낸 값의 타입은 항상 E이고, E 타입의 값이라면 이 리스트에 넣어도 안전하다.
 
 
 

@@ -72,3 +72,37 @@ public <T> void putFavorite(Class<T> type, T instance){
 
 List는 List.class라는 같은 Class를 공유하기 때문에 List< String >.class, List< Integer >.class 는 문법 오류가 난다.<br>
 그러므로 Map< Class< ? >, Object >인 favorites에 key로 등록할 수없다.
+
+###허용하는 타입을 제한하고 싶은 경우
+- 한정적 타입 매개변수나 한정적 와일드카드를 사용하여 표현 가능한 타입을 제안할 수 있다.
+
+````java
+//AnnotatedElement 인터페이스의 메서드
+public <T extends Annotation>
+    T getAnnotation(Class<T> annotationType);
+````
+#### asSubclass를 사용한 타입 제한
+Class< ? >타입의 객체가 있고 이를 getAnnotation같은 한정적 타입 토큰을 받는 메서드에 넘기는경우,<br>
+Class< ? > 대신 Class< ? extends Annotation > 으로 형변환하여 넘길 수 있지만 이 형변환은 비 검사 이므로 컴파일시 경고가 뜬다.<br>
+Class 클래스에는 이런 형변환을 안전하게 동적으로 수행해주는 인스턴스 메서드 "asSubclass" 를 제공한다.
+````java
+//결과 : class java.lang.Integer
+System.out.println(Integer.class.asSubclass(Number.class));
+
+//결과 : Exception in thread "main" java.lang.ClassCastException
+System.out.println(Integer.class.asSubclass(String.class));
+````
+####예시
+````java
+static Annotation getAnnotation(AnnotatedElement element, 
+        String annotationTypeName){
+    Class<?> annotationType = null; // 비한정적 타입 토큰
+    try{
+        annotationType = Class.forName(annotationTypeName);
+    }catch (Exception ex){
+        throw new IllegalArgumentException(ex);
+    }
+    return element.getAnnotation(
+        annotationType.asSubclass(Annotation.class));
+}
+````

@@ -64,7 +64,7 @@ int favoriteInteger = f.getFavorite(Integer.class);
 이를 방지하기 위한 방법
 ````java
 public <T> void putFavorite(Class<T> type, T instance){
-        favorites.put(Objects.requireNonNull(type), type.casst(instance));
+        favorites.put(Objects.requireNonNull(type), type.cast(instance));
 }
 ````
 

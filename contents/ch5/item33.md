@@ -74,7 +74,7 @@ List는 List.class라는 같은 Class를 공유하기 때문에 List< String >.c
 그러므로 Map< Class< ? >, Object >인 favorites에 key로 등록할 수없다.
 
 ### 허용하는 타입을 제한하고 싶은 경우
-- 한정적 타입 매개변수나 한정적 와일드카드를 사용하여 표현 가능한 타입을 제안할 수 있다.
+- 한정적 타입 매개변수나 한정적 와일드카드를 사용하여 표현 가능한 타입을 제한할 수 있다.
 
 ````java
 //AnnotatedElement 인터페이스의 메서드

@@ -92,7 +92,7 @@ System.out.println(Integer.class.asSubclass(Number.class));
 //결과 : Exception in thread "main" java.lang.ClassCastException
 System.out.println(Integer.class.asSubclass(String.class));
 ````
-####예시
+#### 예시
 ````java
 static Annotation getAnnotation(AnnotatedElement element, 
         String annotationTypeName){

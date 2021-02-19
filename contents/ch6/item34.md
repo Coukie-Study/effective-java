@@ -135,7 +135,7 @@ public enum Operation {
 }
 ````
 ### fromString 구현
-열거 타입에는 상수 이름을 입력받아 그 이름에 해당하느느 상수를 반환해 주는 valueOf(String) 메서드가 자동 생성된다.
+열거 타입에는 상수 이름을 입력받아 그 이름에 해당하는 상수를 반환해 주는 valueOf(String) 메서드가 자동 생성된다.
 ````java
 //true
 Planet.valueOf("EARTH") == Planet.EARTH

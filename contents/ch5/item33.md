@@ -70,5 +70,5 @@ public <T> void putFavorite(Class<T> type, T instance){
 
 - 실체화 불가 타입에는 사용할 수없다.
 
-List는 List.class라는 같은 Class를 공유하기 때문에 List<String>.class, List<Integer>.class 는 문법 오류가 난다.<br>
+List는 List.class라는 같은 Class를 공유하기 때문에 List< String >.class, List< Integer >.class 는 문법 오류가 난다.<br>
 그러므로 Map< Class< ? >, Object >인 favorites에 key로 등록할 수없다.

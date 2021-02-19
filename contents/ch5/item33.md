@@ -44,7 +44,7 @@ public static void main(String[] args){
 key값으로 Class< String >, Class< Integer > 등의 값을 넣을 수 있다.
 - Map<Class< ? >, Object>의 value는 Object 이므로 key와 value 사이에 타입 관계를 보증하지 않는다.<br>
 그럼에도 이렇게 선언한것은 이 관계를 명시할 방법이 없기 때문이다.
-- putFavorite 구현에서 Class의 type 메서드가 쓰였기에 다시 key와 value 사이에 타입 관계를 되살릴 수 있다.
+- putFavorite 구현에서 Class의 cast 메서드가 쓰였기에 다시 key와 value 사이에 타입 관계를 되살릴 수 있다.
 
 ````java
 public class Class<T>{

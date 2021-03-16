@@ -2,7 +2,7 @@
 
 - 적합한 인터페이스가 있다면, 매개변수뿐 아니라 반환값, 변수, 필드를 전부 인터페이스 타입으로 선언해라
 - 인터페이스를 타입으로 사용하는 습관이 있다면 프로그램이 훨씬 유연해질 것이다.
-    - `Set<Integer> intSet = new HashMap<>();` → `Set<Integer> intSet = new TreeSet<>();`
+    - `Set<Integer> intSet = new HashSet<>();` → `Set<Integer> intSet = new TreeSet<>();`
     - 단 기존의 코드가 구현체 기능에 의존해 동작한다면 새로운 클래스도 같은 기능을 제공해야 한다.
         - ex) TreeSet은 순서를 보장하지만 HashSet은 그렇지 않다.
 - 선언 타입과 구현 타입을 동시에 바꿀 수 있으니 변수를 구현 타입으로 선언하면 안된다.

@@ -54,7 +54,8 @@ public static void main(String[] args) {
         } catch (ClassCastException e){
             fatalError("Set을 구현하지 않은 클래스이다.");
         }
-
+        s.addAll(Arrays.asList(args).subList(1, args.length));
+        System.out.println(s);
     }
 
     private static void fatalError(String msg) {
